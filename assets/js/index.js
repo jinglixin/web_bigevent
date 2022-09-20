@@ -31,10 +31,11 @@ function getUserInFo() {
     //  // Authorization: localStorage.getItem("token") || "",
     // },
     success: function (res) {
-      //   console.log(res);
+      // console.log(res);
       if (res.status !== 0) {
         return layui.layer.msg("获取用户信息失败");
       }
+      // console.log(res.data);
       renderAvatar(res.data);
     },
     // 不论是成功还是失败最终都会调用complete回调函数
@@ -44,7 +45,8 @@ function getUserInFo() {
 // 渲染用户的头像
 function renderAvatar(user) {
   // 获取用户的名称
-  var name = user.nicename || user.username;
+  var name = user.nickname || user.username;
+  // console.log(name);
   // 设置欢迎的文本
   $("#welcome").html("欢迎&nbsp;&nbsp;" + name);
   // 按需渲染用户的头像
