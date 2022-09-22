@@ -1,6 +1,6 @@
 $.ajaxPrefilter(function (options) {
   // 每次调用会先调用这个函数
-  options.url = "http://api-breakingnews-web.itheima.net" + options.url;
+  options.url = "http://big-event-api-t.itheima.net" + options.url;
 
   // ;统一为有权限的接口设置headers请求头
   if (options.url.indexOf("/my/") !== -1) {
